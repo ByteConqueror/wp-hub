@@ -1,41 +1,45 @@
 # 🐳 WordPress + MySQL via Docker Compose
 
-Цей проєкт — приклад запуску WordPress із базою даних MySQL за допомогою Docker Compose.  
-Використовується офіційний образ **WordPress** з Docker Hub та **MySQL 8.0**.
+[![Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker)](https://www.docker.com/)
+[![WordPress](https://img.shields.io/badge/WordPress-6.x-blue?logo=wordpress)](https://wordpress.org)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?logo=mysql)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+Легкий спосіб розгорнути **WordPress + MySQL** за допомогою Docker Compose.  
+Проєкт створено для навчальної практики та швидкого деплойменту WordPress-середовища.
 ---
 
-## 🚀 Як запустити
+## 🚀 Швидкий старт
 
 ### 1. Клонуй репозиторій
 
+```bash
 git clone https://github.com/ByteConqueror/wp-hub.git
-
 cd wp-hub
 
-### 2. Створи .env файл на основі прикладу
-
+### 2. Створи та налаштуй .env
+```bash
  cp .env.example .env
 
 та заповни власні значення:
-
+```bash
 DB_NAME=exampledb
 DB_USER=exampleuser
 DB_PASSWORD=examplepass
 DB_ROOT_PASSWORD=supersecretroot
 
 ### 3. Запусти контейнери
-
+```bash
 docker compose up -d
 
 ### 4. Відкрий у браузері
-
+```bash
 http://<IP_твого_сервера>:8080/
 
 👉 З’явиться інсталятор WordPress.
 
 ### Структура
-
+```bash
 .
 ├── docker-compose.yml   # Конфігурація сервісів WordPress + MySQL
 ├── .env.example          # Приклад змінних оточення (без секретів)
@@ -47,15 +51,15 @@ http://<IP_твого_сервера>:8080/
 🧩 Корисні команди
 
 Перевірити статус:
-
+```bash
 docker compose ps
 
 Переглянути логи:
-
+```bash
 docker compose logs -f
 
 Зупинити:
-
+```bash
 docker compose down
 
 💡 Примітки
